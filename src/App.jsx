@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import {Card} from './Components/UI/Card'
 import { ExpenseItems } from './Components/Expenses/ExpenseItems';
 
 function App() {
@@ -28,10 +29,12 @@ function App() {
 
   return (
     <div className="App">
+      <Card>
       <ExpenseItems data={expenseData[0]}></ExpenseItems>
       <ExpenseItems data={expenseData[1]}></ExpenseItems>
       <ExpenseItems data={expenseData[2]}></ExpenseItems>
       <ExpenseItems data={expenseData[3]}></ExpenseItems>
+      </Card>
     </div>
   );
 }

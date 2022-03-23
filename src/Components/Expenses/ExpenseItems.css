@@ -1,0 +1,25 @@
+
+.Expense_card {
+    width: 70%;
+    height: 110px;
+    margin: 20px auto;
+    padding: 30px 50px;
+    background-color: 	rgba(255,255,255,.1);
+    backdrop-filter: blur(10px);
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.amount {
+    width: 80px;
+    height: 55px;
+    background-color: rgba(0, 0, 0, 0.459);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
