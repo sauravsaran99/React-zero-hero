@@ -1,5 +1,7 @@
+import "./Card.css"
 
-export const Card = () => {
+export const Card = (props) => {
 
-    return <div className="card"></div>
+    const classes = 'card ' + props.className;
+    return <div className={classes}></div>
 }
