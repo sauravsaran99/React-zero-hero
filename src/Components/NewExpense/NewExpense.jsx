@@ -1,13 +1,16 @@
 
-import ExpenseForm from './ExpenseForm';
+import { ExpenseForm } from './ExpenseForm';
 import './NewExpense.css';
 
-const NewExpense = () => {
+export const NewExpense = (props) => {
+
+    const expenseData = (data) => {
+        props.gettingData(data);
+    }
+
   return (
     <div className='new-expense'>
-      <ExpenseForm />
+      <ExpenseForm deleveringData = {expenseData}/>
     </div>
   );
 };
-
-export default NewExpense;

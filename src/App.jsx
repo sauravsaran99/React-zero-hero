@@ -2,6 +2,7 @@
 import './App.css';
 import {Card} from './Components/UI/Card'
 import { ExpenseItems } from './Components/Expenses/ExpenseItems';
+import { NewExpense } from './Components/NewExpense/NewExpense';
 
 function App() {
 
@@ -25,11 +26,16 @@ function App() {
        amount: 450,
        date: new Date(2021, 5, 12),
      }
-     ]
+     ];
+
+     const extraData = (data) => {
+       console.log('app', data)
+     }
 
   return (
     <div className="App">
       <Card>
+      <NewExpense gettingData={extraData}></NewExpense>
       <ExpenseItems data={expenseData[0]}></ExpenseItems>
       <ExpenseItems data={expenseData[1]}></ExpenseItems>
       <ExpenseItems data={expenseData[2]}></ExpenseItems>
