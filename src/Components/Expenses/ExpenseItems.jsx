@@ -10,9 +10,9 @@ export const ExpenseItems = ({data}) => {
         <Card className="Expense_card">
         <ExpenseDate data={data.date}></ExpenseDate>
         <div>
-            <div>{data.title}</div>
+            <div className="title_size">{data.title}</div>
         </div>
-        <div className="amount">${data.amount}</div>
+        <div className="amount">$ {data.amount}</div>
         </Card>
         </>
     )
