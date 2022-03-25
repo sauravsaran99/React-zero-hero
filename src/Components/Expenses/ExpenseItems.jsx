@@ -2,18 +2,53 @@
 import { ExpenseDate } from "./ExpenseDate";
 import '../Expenses/ExpenseItems.css'
 import { Card } from '../UI/Card'
-export const ExpenseItems = ({data}) => {
+import { ExpenseDateFilter } from "./ExpenseDateFilter";
+import { useState } from "react";
 
-    // console.log(data)
+let len = 0;
+export const ExpenseItems = ({totalData}) => {
+    // console.log('total', totalData)
+    
+   
+
+    const [allData, updateAllData] = useState(totalData);
+
+    if(len < allData.length) {
+        len = allData.length;
+    }
+
+    console.log(len, allData.length, totalData.length)
+    // if(length < totalData.length) {
+    //     updateAllData(totalData)
+    // }
+
+    if(totalData.length > len) {
+        console.log('1', totalData)
+        updateAllData([...totalData])
+        console.log('2', allData)
+    }
+
+    // console.log('total',totalData, 'all',allData)
+
+    const getFilterDate = (date) => {
+
+        updateAllData(totalData.filter((el) =>  el.date.getFullYear() === Number(date)));
+    }
     return (
         <>
         <Card className="Expense_card">
-        <ExpenseDate data={data.date}></ExpenseDate>
-        <div>
-            <div className="title_size">{data.title}</div>
-        </div>
-        <div className="amount">$ {data.amount}</div>
+        <ExpenseDateFilter  sendDate={getFilterDate}></ExpenseDateFilter>
         </Card>
+        { allData.map((e) => 
+        <Card key={e.id} className="Expense_card">
+        <ExpenseDate data={e.date}></ExpenseDate>
+        <div>
+            <div className="title_size">{e.title}</div>
+        </div>
+        <div className="amount">$ {e.amount}</div>
+        </Card>
+        )
+}
         </>
     )
 }

@@ -5,7 +5,7 @@ import './NewExpense.css';
 export const NewExpense = (props) => {
 
     const expenseData = (data) => {
-        props.gettingData(data);
+        props.gettingData({...data, id: Math.random()});
     }
 
   return (
